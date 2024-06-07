@@ -49,6 +49,32 @@
   background-color: rgba(157, 178, 191, 0.5); /* Warna #9DB2BF dengan opasitas 50% */
 }
 
+.nav-link {
+  position: relative;
+  color: #9DB2BF;
+  transition: color 0.3s ease-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #fff !important;
+}
+
 /* @media screen and (max-width: 500px) {
   p{
     color: red;
